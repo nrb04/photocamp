@@ -1,0 +1,85 @@
+{
+  "courses": [
+    {
+      "image": "/cards/card1.png",
+      "name": "Introduction to Digital Photography",
+      "instructor": "John Smith",
+      "availableSeats": 20,
+      "enroll": 10,
+      "price": 99
+    },
+    {
+      "image": "/cards/c16.png",
+      "name": "Mastering Landscape Photography",
+      "instructor": "Emily Johnson",
+      "availableSeats": 15,
+      "enroll": 10,
+      "price": 129
+    },
+    {
+      "image": "/cards/card6.png",
+      "name": "Portrait Photography Techniques",
+      "instructor": "Michael Davis",
+      "availableSeats": 10,
+      "enroll": 10,
+      "price": 149
+    },
+    {
+      "image": "/cards/card3.png",
+      "name": "Advanced Lighting and Composition",
+      "instructor": "Sarah Thompson",
+      "availableSeats": 18,
+      "enroll": 10,
+      "price": 109
+    },
+    {
+      "image": "/cards/card4.png",
+      "name": "Street Photography: Capturing the Urban Life",
+      "instructor": "Robert Wilson",
+      "availableSeats": 12,
+      "enroll": 10,
+      "price": 79
+    },
+    {
+      "image": "/cards/card2.png",
+      "name": "Wildlife Photography: Capturing Nature's Beauty",
+      "instructor": "Jennifer Lee",
+      "availableSeats": 18,
+      "enroll": 10,    
+      "price": 169
+    },
+    {
+      "image": "/cards/card7.png",
+      "name": "Fashion Photography: Creating Stunning Editorials",
+      "instructor": "Sophia Martinez",
+      "availableSeats": 5,
+      "enroll": 10,      
+      "price": 199
+    },
+    {
+      "image": "/cards/card8.png",
+      "name": "Product Photography for E-commerce",
+      "instructor": "David Clark",
+      "availableSeats": 10,
+      "enroll": 10,
+      "price": 139
+    },
+    {
+      "image": "/cards/c10.png",
+      "name": "Black and White Photography: Mastering Monochrome",
+      "instructor": "Oliver Turner",
+      "availableSeats": 15,
+      "enroll": 10,
+      "price": 119
+    },
+    {
+      "image": "c/cards/c11.png",
+      "name": "Travel Photography: Documenting Your Adventures",
+      "instructor": "Emma Wilson",
+      "availableSeats": 25,
+      "enroll": 10,
+      "price": 89
+    }
+  ]
+}
+

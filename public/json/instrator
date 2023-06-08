@@ -1,0 +1,94 @@
+{
+  "instructors": [
+    {
+      "image": "/cards/c10.png",
+      "name": "Emma Wilson",
+      "email": "emmawilson@example.com",
+      "courses": [
+        "Introduction to Digital Photography",
+        "Mastering Landscape Photography"
+      ]
+    },
+    {
+      "image": "/cards/c11.png",
+      "name": "John Smith",
+      "email": "johnsmith@example.com",
+      "courses": [
+        "Portrait Photography Techniques",
+        "Advanced Lighting and Composition"
+      ]
+    },
+    {
+      "image": "/cards/c12.png",
+      "name": "Emily Johnson",
+      "email": "emilyjohnson@example.com",
+      "courses": [
+        "Street Photography: Capturing the Urban Life",
+        "Wildlife Photography: Capturing Nature's Beauty"
+      ]
+    },
+    {
+      "image": "/cards/c13.png",
+      "name": "Michael Davis",
+      "email": "michaeldavis@example.com",
+      "courses": [
+        "Fashion Photography: Creating Stunning Editorials",
+        "Product Photography for E-commerce"
+      ]
+    },
+    {
+      "image": "/cards/c14.png",
+      "name": "Sarah Thompson",
+      "email": "sarahthompson@example.com",
+      "courses": [
+        "Black and White Photography: Mastering Monochrome",
+        "Travel Photography: Documenting Your Adventures"
+      ]
+    },
+    {
+      "image": "/cards/c15.png",
+      "name": "Robert Wilson",
+      "email": "robertwilson@example.com",
+      "courses": [
+        "Night Photography: Capturing the Dark",
+        "Macro Photography: Exploring the Details"
+      ]
+    },
+    {
+      "image": "/cards/c16.png",
+      "name": "Sophia Martinez",
+      "email": "sophiamartinez@example.com",
+      "courses": [
+        "Studio Photography: Mastering Lighting",
+        "Food Photography: Capturing Deliciousness"
+      ]
+    },
+    {
+      "image": "/cards/card1.png",
+      "name": "David Clark",
+      "email": "davidclark@example.com",
+      "courses": [
+        "Architecture Photography: Capturing Structures",
+        "Event Photography: Documenting Special Moments"
+      ]
+    },
+    {
+      "image": "/cards/c10.png",
+      "name": "Oliver Turner",
+      "email": "oliverturner@example.com",
+      "courses": [
+        "Creative Photography: Exploring Artistic Vision",
+        "Mobile Photography: Capturing Moments on the Go"
+      ]
+    },
+    {
+      "image": "i/cards/c10.png",
+      "name": "Jennifer Lee",
+      "email": "jenniferlee@example.com",
+      "courses": [
+        "Nature Photography: Connecting with the Outdoors",
+        "Travel Photography: Capturing Cultures"
+      ]
+    }
+  ]
+}
