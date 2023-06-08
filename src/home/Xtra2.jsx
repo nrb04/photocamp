@@ -14,7 +14,7 @@ const Xtra2 = () => {
         enableMouseSwipe
         enableTouchSwipe
         style={{
-          height: "90vh",
+          height: "100vh",
           width: "90vw",
           margin: "10vh auto",
           borderRadius: "20px",
