@@ -27,6 +27,9 @@ const BannerBox = () => {
         autoplay={{ delay: 3000 }}
       >
         <SwiperSlide>
+          <img src="/banner/b4.jpg" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="/banner/b1.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
@@ -34,9 +37,6 @@ const BannerBox = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src="/banner/b3.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/banner/b4.jpg" alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

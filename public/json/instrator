@@ -3,6 +3,7 @@
     {
       "image": "/cards/c10.png",
       "name": "Emma Wilson",
+      "role": "faculty",
       "email": "emmawilson@example.com",
       "courses": [
         "Introduction to Digital Photography",
@@ -13,6 +14,7 @@
       "image": "/cards/c11.png",
       "name": "John Smith",
       "email": "johnsmith@example.com",
+      "role": "faculty",
       "courses": [
         "Portrait Photography Techniques",
         "Advanced Lighting and Composition"
@@ -21,6 +23,7 @@
     {
       "image": "/cards/c12.png",
       "name": "Emily Johnson",
+      "role": "faculty",
       "email": "emilyjohnson@example.com",
       "courses": [
         "Street Photography: Capturing the Urban Life",
@@ -30,6 +33,7 @@
     {
       "image": "/cards/c13.png",
       "name": "Michael Davis",
+      "role": "faculty",
       "email": "michaeldavis@example.com",
       "courses": [
         "Fashion Photography: Creating Stunning Editorials",
@@ -39,6 +43,7 @@
     {
       "image": "/cards/c14.png",
       "name": "Sarah Thompson",
+      "role": "faculty",
       "email": "sarahthompson@example.com",
       "courses": [
         "Black and White Photography: Mastering Monochrome",
@@ -48,6 +53,7 @@
     {
       "image": "/cards/c15.png",
       "name": "Robert Wilson",
+      "role": "faculty",
       "email": "robertwilson@example.com",
       "courses": [
         "Night Photography: Capturing the Dark",
@@ -57,6 +63,7 @@
     {
       "image": "/cards/c16.png",
       "name": "Sophia Martinez",
+      "role": "faculty",
       "email": "sophiamartinez@example.com",
       "courses": [
         "Studio Photography: Mastering Lighting",
@@ -66,6 +73,7 @@
     {
       "image": "/cards/card1.png",
       "name": "David Clark",
+      "role": "faculty",
       "email": "davidclark@example.com",
       "courses": [
         "Architecture Photography: Capturing Structures",
@@ -75,6 +83,7 @@
     {
       "image": "/cards/c10.png",
       "name": "Oliver Turner",
+      "role": "faculty",
       "email": "oliverturner@example.com",
       "courses": [
         "Creative Photography: Exploring Artistic Vision",
@@ -84,6 +93,7 @@
     {
       "image": "i/cards/c10.png",
       "name": "Jennifer Lee",
+      "role": "faculty",
       "email": "jenniferlee@example.com",
       "courses": [
         "Nature Photography: Connecting with the Outdoors",

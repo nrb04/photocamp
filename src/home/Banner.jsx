@@ -3,7 +3,7 @@ import BannerBox from "./BannerBox";
 const Banner = () => {
   return (
     <div>
-      <div className="relative m-5 p-16 h-screen bg-gradient-to-t from-[#fffbf5] to-[#fffef4] pt-10 sm:pt-0 mb-10">
+      <div className="relative m-5 p-16  bg-gradient-to-t from-[#fffbf5] to-[#fffef4] pt-10 sm:pt-0 ">
         <div className="container mx-auto grid grid-row-1 md:grid-cols-2 items-center md:gap-20 bg-gradient-to-t from-[#fffbf5] to-[#fffef4]">
           <div className="content">
             <div className="flex items-center gap-3">
