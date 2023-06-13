@@ -3,6 +3,9 @@ import Home from "../home/Home";
 import CourseAdd from "../post/CourseAdd";
 import Login from "../Users/Login";
 import Registration from "../Users/Registration";
+import Adminpage from "../dashboard/admin/Adminpage";
+import Allcourses from "../dashboard/students/Allcourses";
+import StripeContainer from "../Stripe/StripeContainer";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,18 @@ const router = createBrowserRouter([
   {
     path: "/registration",
     element: <Registration></Registration>,
+  },
+  {
+    path: "/admin",
+    element: <Adminpage />,
+  },
+  {
+    path: "/all",
+    element: <Allcourses />,
+  },
+  {
+    path: "/pay",
+    element: <StripeContainer></StripeContainer>,
   },
 ]);
 

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { googleLogin, login } = useContext(AuthContext);
@@ -9,11 +10,14 @@ const Login = () => {
   const [error, setError] = useState("");
   const from = location.state?.from?.pathname || "/";
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const email = form.email.value;
-    const password = form.password.value;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const handleLogin = async (data) => {
+    const { email, password } = data;
 
     if (email === "" || password === "") {
       setError("Please enter both email and password.");
@@ -27,97 +31,113 @@ const Login = () => {
 
     setError(""); // Resetting the error state
 
-    login(email, password)
-      .then((result) => {
-        const logUser = result.user;
-        console.log(logUser);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        setError("Invalid email or password.");
-        console.log(error);
+    try {
+      const result = await login(email, password);
+      const user = result.user;
+      console.log(user);
+
+      // Send user data to localhost:3000/users
+      await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: user.email,
+          displayName: user.displayName,
+          role: user,
+        }),
       });
+
+      navigate(from, { replace: true });
+    } catch (error) {
+      setError("Invalid email or password.");
+      console.log(error);
+    }
   };
 
-  const handleGoogleLogin = () => {
-    googleLogin()
-      .then((result) => {
-        console.log(result.user);
-        setError("");
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        setError(error.message);
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await googleLogin();
+      const user = result.user;
+      console.log(user);
+
+      // Send user data to localhost:3000/users
+      await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: user.email,
+          displayName: user.displayName,
+          role: user,
+        }),
       });
+
+      setError("");
+      navigate(from, { replace: true });
+    } catch (error) {
+      setError(error.message);
+    }
   };
+
+  // Rest of the code...
 
   return (
     <div>
       <div className="bg-white relative lg:py-20">
-        <div
-          className="flex flex-col items-center justify-between pt-0 pr-10 pb-0 pl-10 mt-0 mr-auto mb-0 ml-auto max-w-7xl
-      xl:px-5 lg:flex-row"
-        >
-          <div className="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
-            <div className="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
-              <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10"></div>
+        {/* Rest of the JSX code... */}
+        <form onSubmit={handleSubmit(handleLogin)}>
+          {error && <p>{error}</p>}
+          <div className="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
+            <div className="relative">
+              <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
+                Email
+              </p>
+              <input
+                {...register("email", { required: true })}
+                placeholder="please enter your email"
+                className="border placeholder-gray-400 focus:outline-none
+                  focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                  border-gray-300 rounded-md"
+                type="email"
+              />
+              {errors.email && <p>Email is required.</p>}
             </div>
-            <div className="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
-              <div
-                className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
-            relative z-10"
-              >
-                <p className="w-full text-4xl font-medium text-center leading-snug font-serif">
-                  Sign up for an account
-                </p>
-                <form onSubmit={handleLogin}>
-                  {error && <p className="">{error}</p>}
-                  <div className="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
-                    <div className="relative">
-                      <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
-                        Email
-                      </p>
-                      <input
-                        placeholder="please enter your email"
-                        className="border placeholder-gray-400 focus:outline-none
-                  focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                  border-gray-300 rounded-md"
-                        type="email"
-                        name="email"
-                      />
-                    </div>
-                    <div className="relative">
-                      <p
-                        className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
+            <div className="relative">
+              <p
+                className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute"
-                      >
-                        Password
-                      </p>
-                      <input
-                        placeholder="Password"
-                        type="password"
-                        name="password"
-                        className="border placeholder-gray-400 focus:outline-none
+              >
+                Password
+              </p>
+              <input
+                {...register("password", { required: true, minLength: 6 })}
+                placeholder="Password"
+                type="password"
+                className="border placeholder-gray-400 focus:outline-none
                   focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"
-                      />
-                    </div>
-                    <div className="relative">
-                      <button
-                        type="submit"
-                        className="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
+              />
+              {errors.password && (
+                <p>
+                  Password is required and should be at least 6 characters long.
+                </p>
+              )}
+            </div>
+            <div className="relative">
+              <button
+                type="submit"
+                className="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
                   rounded-lg transition duration-200 hover:bg-indigo-600 ease"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <button onClick={handleGoogleLogin}>googleLogin</button>
-              </div>
+              >
+                Submit
+              </button>
             </div>
           </div>
-        </div>
+        </form>
+        <button onClick={handleGoogleLogin}>googleLogin</button>
       </div>
     </div>
   );
