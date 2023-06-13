@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import  { createContext, useState } from "react";
+import { createContext, useState } from "react";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -12,7 +12,7 @@ import {
 import { useEffect } from "react";
 import app from "../firebase/firebase.config";
 export const AuthContext = createContext(null);
-
+import axios from "axios";
 const auth = getAuth(app);
 
 const AuthPovider = ({ children }) => {
@@ -39,10 +39,21 @@ const AuthPovider = ({ children }) => {
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+
+      if (currentUser) {
+        axios
+          .post("http://localhost:3000/jwt", { email: currentUser.email })
+          .then((data) => {
+            localStorage.setItem("access-token", data.data.token);
+            setLoading(false);
+            console.log(data);
+          });
+      } else {
+        localStorage.removeItem("access-token");
+      }
     });
     return () => unsubscribed;
-  });
+  }, []);
   const authInfo = {
     user,
     loading,

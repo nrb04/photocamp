@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { AuthContext } from "../providers/AuthPovider";
 import { Navigate, useLocation } from "react-router-dom";
 import { Spinner } from "@material-tailwind/react";
