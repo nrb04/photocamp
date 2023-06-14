@@ -6,6 +6,7 @@ import Registration from "../Users/Registration";
 import Adminpage from "../dashboard/admin/Adminpage";
 import Allcourses from "../dashboard/students/Allcourses";
 import StripeContainer from "../Stripe/StripeContainer";
+import Myclasses from "../dashboard/students/Myclasses";
 
 const router = createBrowserRouter([
   {
@@ -33,8 +34,12 @@ const router = createBrowserRouter([
     element: <Allcourses />,
   },
   {
-    path: "/pay",
+    path: "/pay/:id",
     element: <StripeContainer></StripeContainer>,
+  },
+  {
+    path: "/myclass",
+    element: <Myclasses></Myclasses>,
   },
 ]);
 

@@ -23,13 +23,32 @@ const Allcourses = () => {
     fetchData();
   }, []);
 
+  const handleAddClasses = async (course) => {
+    const user = {
+      email: "user@example.com", // Replace with the actual user's email
+      payment: "Added",
+      courseId: course._id, // Add course._id as courseId
+      course,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/myclasses",
+        user,
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <>
-        <div className="grid grid-cols-3  mt-36">
-          {courses.slice(0, 6).map((course) => (
+        <div className="grid grid-cols-3 mt-36 w-8/12 mx-auto">
+          {courses.map((course) => (
             <div key={course._id}>
-              <div className="mx-auto mb-36  max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div className="mx-auto mb-36 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                   <img
                     className="rounded-t-lg h-36 -mt-16"
@@ -46,12 +65,12 @@ const Allcourses = () => {
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                     {course.price}
                   </p>
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => handleAddClasses(course)}
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    Read more
-                  </a>
+                    Add classes
+                  </button>
                 </div>
               </div>
             </div>
