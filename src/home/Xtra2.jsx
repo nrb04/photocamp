@@ -8,18 +8,20 @@ let components = [
 
 const Xtra2 = () => {
   return (
-    <div className="w-11/12 h-96 mb-20 mx-auto">
-      <LiquidSwipe
-        components={components}
-        enableMouseSwipe
-        enableTouchSwipe
-        style={{
-          height: "100vh",
-          width: "90vw",
-          margin: "10vh auto",
-          borderRadius: "20px",
-        }}
-      />
+    <div className="container">
+      {" "}
+      <div className="w-11/12 h-96 mb-20 mx-auto">
+        <LiquidSwipe
+          components={components}
+          enableMouseSwipe
+          enableTouchSwipe
+          style={{
+            height: "100vh",
+            width: "90vw",
+            borderRadius: "20px",
+          }}
+        />
+      </div>
     </div>
   );
 };

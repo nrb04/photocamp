@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import axios from "axios";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const fetchUserCourses = async (email) => {
   try {
@@ -15,14 +16,15 @@ const fetchUserCourses = async (email) => {
 };
 const Myclasses = () => {
   const [userCourses, setUserCourses] = useState([]);
+  const [user] = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
-      const user = {
-        email: "user@example.com", // Replace with the actual user's email
+      const users = {
+        email: user.email, // Replace with the actual user's email
       };
 
-      const courses = await fetchUserCourses(user.email);
+      const courses = await fetchUserCourses(users.email);
       setUserCourses(courses);
     };
 
@@ -55,7 +57,9 @@ const Myclasses = () => {
                   {course.payment}
                 </p>
                 <button
-                  onClick={() => (window.location.href = `/pay/${course._id}`)}
+                  onClick={() =>
+                    (window.location.href = `/dashboard/pay/${course._id}`)
+                  }
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Payment

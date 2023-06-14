@@ -45,7 +45,7 @@ const Login = () => {
         body: JSON.stringify({
           email: user.email,
           displayName: user.displayName,
-          role: user,
+          role: "users",
         }),
       });
 
@@ -71,7 +71,7 @@ const Login = () => {
         body: JSON.stringify({
           email: user.email,
           displayName: user.displayName,
-          role: user,
+          role: "users",
         }),
       });
 

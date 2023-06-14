@@ -11,7 +11,7 @@ const fetchCourses = async () => {
   }
 };
 
-const Cardclass = () => {
+const Allclass = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Cardclass = () => {
   return (
     <>
       <div className="grid grid-cols-3 mt-36 w-8/12 mx-auto">
-        {courses.slice(0, 6).map((course) => (
+        {courses.map((course) => (
           <div key={course._id}>
             <div className="mx-auto mb-36  max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <a href="#">
@@ -60,4 +60,4 @@ const Cardclass = () => {
   );
 };
 
-export default Cardclass;
+export default Allclass;

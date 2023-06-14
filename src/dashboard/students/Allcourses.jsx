@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const fetchCourses = async () => {
   try {
@@ -13,6 +14,7 @@ const fetchCourses = async () => {
 
 const Allcourses = () => {
   const [courses, setCourses] = useState([]);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,8 +26,8 @@ const Allcourses = () => {
   }, []);
 
   const handleAddClasses = async (course) => {
-    const user = {
-      email: "user@example.com", // Replace with the actual user's email
+    const users = {
+      email: user.email, // Replace with the actual user's email
       payment: "Added",
       courseId: course._id, // Add course._id as courseId
       course,
@@ -34,7 +36,7 @@ const Allcourses = () => {
     try {
       const response = await axios.post(
         "http://localhost:3000/myclasses",
-        user,
+        users,
       );
       console.log(response.data);
     } catch (error) {
@@ -64,6 +66,12 @@ const Allcourses = () => {
                   </a>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                     {course.price}
+                  </p>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {course.availableSeats}
+                  </p>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    total enroll students {course.enroll}
                   </p>
                   <button
                     onClick={() => handleAddClasses(course)}

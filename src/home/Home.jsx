@@ -1,20 +1,17 @@
-import Navbar from "../HeaderFooter/Navbar";
-
 import Banner from "./Banner";
-// import Xtra1 from "./Xtra1";
+import Xtra1 from "./Xtra1";
 // import Xtra2 from "./Xtra2";
 import Cardclass from "./card/Cardclass";
+import Userclass from "./card/Userclass";
 
 const Home = () => {
   return (
     <div>
-      <Navbar></Navbar>
       <Banner></Banner>
-
+      {/* <Xtra2></Xtra2> */}
       <Cardclass></Cardclass>
-      {/* <Xtra1 />
-      <Xtra2></Xtra2>
-      <Axios></Axios> */}
+      <Xtra1 />
+      <Userclass></Userclass>
     </div>
   );
 };

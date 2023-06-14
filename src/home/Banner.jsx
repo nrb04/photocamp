@@ -1,40 +1,112 @@
-import BannerBox from "./BannerBox";
+import { Carousel, Typography, Button } from "@material-tailwind/react";
 
 const Banner = () => {
   return (
     <div>
-      <div className="relative m-5 p-16  bg-gradient-to-t from-[#fffbf5] to-[#fffef4] pt-10 sm:pt-0 ">
-        <div className="container mx-auto grid grid-row-1 md:grid-cols-2 items-center md:gap-20 bg-gradient-to-t from-[#fffbf5] to-[#fffef4]">
-          <div className="content">
-            <div className="flex items-center gap-3">
-              <hr className="w-10 bg-orange-500 border " />
-              <span className="md:text-[18px] font-medium text-gray-800 ">
-                UI/UX Designer Developer
-              </span>
+      <Carousel className="overflow-hidden">
+        <div className=" h-96 w-full">
+          <img
+            src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+            alt="image 1"
+            className="h-96 w-full "
+          />
+          <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+            <div className="w-3/4 text-center md:w-2/4">
+              <Typography
+                variant="h1"
+                color="white"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              >
+                The Beauty of Nature
+              </Typography>
+              <Typography
+                variant="lead"
+                color="white"
+                className="mb-12 opacity-80"
+              >
+                It is not so much for its beauty that the forest makes a claim
+                upon men&apos;s hearts, as for that subtle something, that
+                quality of air that emanation from old trees, that so
+                wonderfully changes and renews a weary spirit.
+              </Typography>
+              <div className="flex justify-center gap-2">
+                <Button size="lg" color="white">
+                  Explore
+                </Button>
+              </div>
             </div>
-            <p className="text-[40px] lg:text-[45px] xl:text-[55px] font-bold leading-tight mt-5 sm:mt-0 ">
-              m Rownok Mahbub <br />
-              Designer And Developer
-            </p>
-            <p className="mt-5 md:text-md ">
-              m creative designer based in Bangladesh, and m very passionate and
-              dedicated to my <br className="hidden md:block" /> work.Your
-              Satisfaction is my success
-            </p>
-            <div className="flex gap-4 mt-10">
-              <button className="font-medium text-[16px] flex items-center px-5 py-3 md:py-4 md:px-8 rounded-xl capitalize bg-gradient-to-r from-orange-300 to-orange-500 hover:from-pink-500 hover:to-yellow-500  relative gap-2 transition duration-300 hover:scale-105 text-white shadow-glass ">
-                Get In Touch
-                <span className="animate-ping absolute right-0 top-0 w-3 h-3  rounded-full bg-gradient-to-r from-orange -400 to-orange-700 "></span>
-              </button>
-              {/* <RiFacebookFill className="" />
-              <SiBehance /> */}
-            </div>
-          </div>
-          <div className="relative sm:mt-0 mt-10  px-16 sm:px-0">
-            <BannerBox></BannerBox>
           </div>
         </div>
-      </div>
+        <div className="relative h-full w-full">
+          <img
+            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+            alt="image 2"
+            className="h-96 w-full object-cover"
+          />
+          <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+            <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+              <Typography
+                variant="h1"
+                color="white"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              >
+                The Beauty of Nature
+              </Typography>
+              <Typography
+                variant="lead"
+                color="white"
+                className="mb-12 opacity-80"
+              >
+                It is not so much for its beauty that the forest makes a claim
+                upon men&apos;s hearts, as for that subtle something, that
+                quality of air that emanation from old trees, that so
+                wonderfully changes and renews a weary spirit.
+              </Typography>
+              <div className="flex gap-2">
+                <Button size="lg" color="white">
+                  Explore
+                </Button>
+                <Button size="lg" color="white" variant="text">
+                  Gallery
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative h-full w-full">
+          <img
+            src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+            alt="image 3"
+            className="h-96 w-full object-cover"
+          />
+          <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+            <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
+              <Typography
+                variant="h1"
+                color="white"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              >
+                The Beauty of Nature
+              </Typography>
+              <Typography
+                variant="lead"
+                color="white"
+                className="mb-12 opacity-80"
+              >
+                It is not so much for its beauty that the forest makes a claim
+                upon men&apos;s hearts, as for that subtle something, that
+                quality of air that emanation from old trees, that so
+                wonderfully changes and renews a weary spirit.
+              </Typography>
+              <div className="flex gap-2">
+                <Button size="lg" color="white">
+                  Explore
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Carousel>
     </div>
   );
 };

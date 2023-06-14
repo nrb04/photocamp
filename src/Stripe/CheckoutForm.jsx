@@ -8,6 +8,7 @@ export const CheckoutForm = () => {
   const elements = useElements();
   const { id } = useParams(); // Extract the 'id' parameter from the URL
   const [coursePrice, setCoursePrice] = useState(0);
+  const [courseId, setCourseId] = useState(0);
 
   useEffect(() => {
     const fetchCoursePrice = async () => {
@@ -15,6 +16,7 @@ export const CheckoutForm = () => {
         const response = await axios.get(`http://localhost:3000/myclass/${id}`);
         const course = response.data;
         setCoursePrice(course.course.price);
+        setCourseId(course.course.courseId);
       } catch (error) {
         console.error(error);
       }
@@ -34,18 +36,26 @@ export const CheckoutForm = () => {
       console.log("Stripe 23 | token generated!", paymentMethod);
       try {
         const { id: paymentMethodId } = paymentMethod;
-        const response = await axios.post(
-          "http://localhost:3000/stripe/charge",
-          {
-            amount: coursePrice * 100, // Convert price to cents
-            paymentMethodId: paymentMethodId,
-            courseId: id, // Pass the 'id' parameter to the API endpoint
-          },
+
+        // Update the payment status of the course
+        const updatePaymentStatus = await axios.put(
+          `http://localhost:3000/course/${courseId}}`,
+          { enroll: +1 },
         );
 
-        console.log("Stripe 35 | data", response.data.success);
-        if (response.data.success) {
+        if (updatePaymentStatus.status === 200) {
+          console.log("Payment status updated successfully");
+
+          // Make the payment charge to Stripe
+          await axios.post(`http://localhost:3000/myclass/${id}`, {
+            amount: coursePrice * 100, // Convert price to cents
+            paymentMethodId: paymentMethodId,
+            courseId: id,
+          });
+
           console.log("CheckoutForm.js 25 | payment successful!");
+        } else {
+          console.log("Failed to update payment status");
         }
       } catch (error) {
         console.log("CheckoutForm.js 28 | ", error);
