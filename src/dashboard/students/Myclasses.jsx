@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-
 import axios from "axios";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -14,23 +13,23 @@ const fetchUserCourses = async (email) => {
     return [];
   }
 };
+
 const Myclasses = () => {
   const [userCourses, setUserCourses] = useState([]);
-  const [user] = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
-      const users = {
-        email: user.email, // Replace with the actual user's email
-      };
-
-      const courses = await fetchUserCourses(users.email);
+      const courses = await fetchUserCourses(user.email);
       setUserCourses(courses);
     };
 
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user.email]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
