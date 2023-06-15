@@ -4,7 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Addcourses = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const { register, handleSubmit, reset } = useForm();
 
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -15,7 +15,6 @@ const Addcourses = () => {
         // Update existing course
         await axios.put(`http://localhost:3000/courses/${selectedCourse._id}`, {
           data,
-          email: user.email,
         });
         console.log("Course updated successfully");
       } else {
@@ -24,16 +23,21 @@ const Addcourses = () => {
         console.log("Course added successfully");
       }
       reset(); // Reset the form after successful submission
-
       setSelectedCourse(null); // Clear the selected course
     } catch (error) {
       console.error(error);
     }
   };
+
+  if (loading) {
+    // Render a loading state while user data is being fetched
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <div className="container mx-auto py-8">
-        <h1 className="text-2xl font-bold mb-6 text-center">add from</h1>
+        <h1 className="text-2xl font-bold mb-6 text-center">Add Form</h1>
         <form
           className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md"
           onSubmit={handleSubmit(onSubmit)}
@@ -78,10 +82,12 @@ const Addcourses = () => {
               {...register("course_status", { required: true })}
               defaultValue="pending"
             />
-            <input
-              {...register("email", { required: true })}
-              defaultValue={user.email}
-            />
+            {user && (
+              <input
+                {...register("email", { required: true })}
+                defaultValue={user.email}
+              />
+            )}
           </div>
 
           <button

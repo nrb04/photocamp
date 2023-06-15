@@ -14,7 +14,8 @@ import Cardclass from "../home/card/Cardclass";
 import Myclasses from "../dashboard/students/Myclasses";
 
 import AllUserclass from "../navClassUser/AllUserclass";
-import Addcourses from "../dashboard/faculty/AddCourses";
+// import Addcourses from "../dashboard/faculty/AddCourses";
+import Fclasses from "../dashboard/faculty/Fclasses";
 
 // import Leftnav from "../dashboard/Leftnav";
 
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/test",
-        element: <Addcourses></Addcourses>,
+        element: <Fclasses></Fclasses>,
       },
     ],
   },
