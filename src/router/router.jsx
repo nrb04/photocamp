@@ -14,8 +14,10 @@ import Cardclass from "../home/card/Cardclass";
 import Myclasses from "../dashboard/students/Myclasses";
 
 import AllUserclass from "../navClassUser/AllUserclass";
-
+import Allinone from "../dashboard/admin/Allinone";
 import UsersComponent from "../dashboard/admin/UsersComponent";
+import Addcourses from "../dashboard/faculty/AddCourses";
+import Fclasses from "../dashboard/faculty/Fclasses";
 
 // import Leftnav from "../dashboard/Leftnav";
 
@@ -67,8 +69,29 @@ const router = createBrowserRouter([
         element: <Cardclass></Cardclass>,
       },
       {
+        path: "/dashboard/a/c",
+        element: <Allinone></Allinone>,
+      },
+      {
+        path: "/dashboard/a/user",
+        element: <UsersComponent></UsersComponent>,
+      },
+      {
+        path: "/dashboard/f/add",
+        element: <Addcourses></Addcourses>,
+      },
+      {
+        path: "/dashboard/f/myclass",
+        element: <Fclasses></Fclasses>,
+      },
+
+      {
         path: "/dashboard/s/all",
         element: <Allcourses />,
+      },
+      {
+        path: "/dashboard/s/my",
+        element: <Myclasses></Myclasses>,
       },
       {
         path: "/dashboard/s/my",
