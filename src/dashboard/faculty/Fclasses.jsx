@@ -5,7 +5,9 @@ import useRole from "../../AuthProvider/role/useRole";
 
 const fetchCourses = async (email) => {
   try {
-    const response = await axios.get(`http://localhost:3000/course/${email}`);
+    const response = await axios.get(
+      `https://ass12.vercel.app/course/${email}`,
+    );
     return response.data;
   } catch (error) {
     console.error(error);
@@ -30,7 +32,7 @@ const Fclasses = () => {
 
   const handleDelete = async (courseId) => {
     try {
-      await axios.delete(`http://localhost:3000/courses/${courseId}`);
+      await axios.delete(`https://ass12.vercel.app/courses/${courseId}`);
       console.log("Course deleted successfully");
       const updatedCourses = await fetchCourses(user.email); // Fetch updated courses
       setCourses(updatedCourses);
@@ -50,7 +52,7 @@ const Fclasses = () => {
         <div>
           <div className="container mx-auto py-8">
             <h1 className="text-2xl font-bold mb-6 text-center">
-              Instrautor all
+              Instrautor all Classes
             </h1>
           </div>
 

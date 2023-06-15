@@ -26,7 +26,7 @@ const NavBar = () => {
                 <h3 className="text-2xl font-medium text-blue-500">
                   <img
                     className="h-10 object-cover"
-                    src="/toyLogo.png"
+                    src="/logo.png"
                     alt="PhotoCamp"
                   />
                 </h3>

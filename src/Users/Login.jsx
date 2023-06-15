@@ -37,14 +37,14 @@ const Login = () => {
       console.log(user);
 
       // Send user data to localhost:3000/users
-      await fetch("http://localhost:3000/users", {
+      await fetch("https://ass12.vercel.app/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email: user.email,
-          displayName: user.displayName,
+          name: user.displayName,
           role: "users",
         }),
       });
@@ -63,7 +63,7 @@ const Login = () => {
       console.log(user);
 
       // Send user data to localhost:3000/users
-      await fetch("http://localhost:3000/users", {
+      await fetch("https://ass12.vercel.app/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ const Login = () => {
         {/* Rest of the JSX code... */}
         <form onSubmit={handleSubmit(handleLogin)}>
           {error && <p>{error}</p>}
-          <div className="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
+          <div className="w-1/6 mt-6 mx-auto mb-0  relative space-y-8">
             <div className="relative">
               <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                 Email
@@ -137,7 +137,9 @@ const Login = () => {
             </div>
           </div>
         </form>
-        <button onClick={handleGoogleLogin}>googleLogin</button>
+        <div className="mx-auto rounded-full">
+          <button onClick={handleGoogleLogin}>googleLogin</button>
+        </div>
       </div>
     </div>
   );

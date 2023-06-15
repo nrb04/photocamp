@@ -12,8 +12,8 @@ import Main from "../home/Main";
 import Dashboard from "../dashboard/Dashboard";
 import Cardclass from "../home/card/Cardclass";
 import Myclasses from "../dashboard/students/Myclasses";
-
 import AllUserclass from "../navClassUser/AllUserclass";
+import Allclass from "../navClassUser/Allclass";
 import Allinone from "../dashboard/admin/Allinone";
 import UsersComponent from "../dashboard/admin/UsersComponent";
 import Addcourses from "../dashboard/faculty/AddCourses";
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/all",
-        element: <Allcourses />,
+        element: <Allclass></Allclass>,
       },
       {
         path: "/faculty",

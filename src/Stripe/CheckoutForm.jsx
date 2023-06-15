@@ -13,7 +13,9 @@ export const CheckoutForm = () => {
   useEffect(() => {
     const fetchCoursePrice = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/myclass/${id}`);
+        const response = await axios.get(
+          `https://ass12.vercel.app/myclass/${id}`,
+        );
         const course = response.data;
         setCoursePrice(course.course.price);
         setCourseId(course.course.courseId);
@@ -39,7 +41,7 @@ export const CheckoutForm = () => {
 
         // Update the payment status of the course
         const updatePaymentStatus = await axios.put(
-          `http://localhost:3000/course/${courseId}}`,
+          `https://ass12.vercel.app/course/${courseId}}`,
           { enroll: +1 },
         );
 
@@ -47,7 +49,7 @@ export const CheckoutForm = () => {
           console.log("Payment status updated successfully");
 
           // Make the payment charge to Stripe
-          await axios.post(`http://localhost:3000/myclass/${id}`, {
+          await axios.post(`https://ass12.vercel.app/myclass/${id}`, {
             amount: coursePrice * 100, // Convert price to cents
             paymentMethodId: paymentMethodId,
             courseId: id,

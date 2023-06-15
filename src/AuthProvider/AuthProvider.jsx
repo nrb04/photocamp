@@ -42,7 +42,7 @@ const AuthPovider = ({ children }) => {
 
       if (currentUser) {
         axios
-          .post("http://localhost:3000/jwt", { email: currentUser.email })
+          .post("https://ass12.vercel.app/jwt", { email: currentUser.email })
           .then((data) => {
             localStorage.setItem("access-token", data.data.token);
             setLoading(false);

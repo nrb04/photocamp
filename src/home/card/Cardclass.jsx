@@ -3,7 +3,7 @@ import axios from "axios";
 
 const fetchCourses = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/courses");
+    const response = await axios.get("https://ass12.vercel.app/courses");
     return response.data;
   } catch (error) {
     console.error(error);
@@ -25,6 +25,17 @@ const Cardclass = () => {
 
   return (
     <>
+      <div className="mx-auto max-w-sm space-x-4 rounded-xl bg-white p-6 shadow-lg">
+        <div>
+          <div className="text-2xl text-center font-bold text-black">
+            Top Courses
+          </div>
+          <p className="text-center text-slate-500">
+            Here you saw the top couses
+          </p>
+        </div>
+      </div>
+
       <div className="grid grid-cols-3 mt-36 w-8/12 mx-auto">
         {courses.slice(0, 6).map((course) => (
           <div key={course._id}>

@@ -3,7 +3,7 @@ import axios from "axios";
 
 const fetchCourses = async () => {
   try {
-    const response = await axios.get(`http://localhost:3000/use/faculty`);
+    const response = await axios.get(`https://ass12.vercel.app/use/faculty`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -25,6 +25,16 @@ const Userclass = () => {
 
   return (
     <>
+      <div className="mx-auto max-w-sm space-x-4 rounded-xl bg-white p-6 shadow-lg">
+        <div>
+          <div className="text-2xl text-center font-bold text-black">
+            Top Instructor
+          </div>
+          <p className="text-center text-slate-500">
+            top level feculty who gona teach you
+          </p>
+        </div>
+      </div>
       <div className="grid md:grid-cols-3 mt-36 md:w-8/12 md:mx-auto ">
         {courses.slice(0, 6).map((course) => (
           <div key={course._id}>

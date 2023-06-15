@@ -14,13 +14,16 @@ const Addcourses = () => {
     try {
       if (selectedCourse) {
         // Update existing course
-        await axios.put(`http://localhost:3000/courses/${selectedCourse._id}`, {
-          data,
-        });
+        await axios.put(
+          `https://ass12.vercel.app/courses/${selectedCourse._id}`,
+          {
+            data,
+          },
+        );
         console.log("Course updated successfully");
       } else {
         // Add new course
-        await axios.post("http://localhost:3000/courses", data);
+        await axios.post("https://ass12.vercel.app/coursesadd", data);
         console.log("Course added successfully");
       }
       reset(); // Reset the form after successful submission
