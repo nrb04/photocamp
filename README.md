@@ -1,17 +1,22 @@
 
+#vercel cannot working good for my project ... from chatgpt vercel may be static and stateless server thats why i got those problem ... for local setup i give my .env.local file also express .env  uploaded ..
+
+sorry for this problem ....
+
+
 # Assignment 12
-Before live link check please check 
 
-https://ass12.vercel.app/users/
+Before live link check please check
 
-# Role came from database So nothing show in dashboard 
+https://ass12.vercel.appusers/
 
+# Role came from database So nothing show in dashboard
 
 Sorry For dashBoard desgin ... all funtion work good expect paymenT AFTER ENROLLMENT +1 and - 1
 
-if I add dashBoard design my project gone slow  ... and lots of desgin not working 
+if I add dashBoard design my project gone slow ... and lots of desgin not working
 
-stipe password 
+stipe password
 
 Hero#2025#kala_manus
 

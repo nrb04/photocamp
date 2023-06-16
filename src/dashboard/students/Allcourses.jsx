@@ -5,7 +5,7 @@ import useRole from "../../AuthProvider/role/useRole";
 
 const fetchCourses = async () => {
   try {
-    const response = await axios.get("https://ass12.vercel.app/courses");
+    const response = await axios.get("https://ass12.vercel.appcourses");
     return response.data;
   } catch (error) {
     console.error(error);
@@ -36,7 +36,7 @@ const Allcourses = () => {
 
     try {
       const response = await axios.post(
-        "https://ass12.vercel.app/myclassadd",
+        "https://ass12.vercel.appmyclassadd",
         users,
       );
       console.log(response.data);

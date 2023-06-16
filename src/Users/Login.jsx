@@ -37,7 +37,7 @@ const Login = () => {
       console.log(user);
 
       // Send user data to localhost:3000/users
-      await fetch("https://ass12.vercel.app/users", {
+      await fetch("https://ass12.vercel.appusers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -63,14 +63,14 @@ const Login = () => {
       console.log(user);
 
       // Send user data to localhost:3000/users
-      await fetch("https://ass12.vercel.app/users", {
+      await fetch("https://ass12.vercel.appusers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email: user.email,
-          displayName: user.displayName,
+          name: user.displayName,
           role: "users",
         }),
       });

@@ -10,7 +10,7 @@ const useRole = () => {
     const fetchUserRoles = async () => {
       try {
         const response = await axios.get(
-          `https://ass12.vercel.app/users/${user.email}`,
+          `https://ass12.vercel.appusers/${user.email}`,
         );
         const responseData = response.data;
         setRole(responseData.role);
