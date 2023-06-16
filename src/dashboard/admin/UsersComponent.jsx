@@ -12,7 +12,7 @@ const UsersComponent = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("https://ass12.vercel.appusers");
+      const response = await axios.get("https://ass12.vercel.app/users");
       setUsers(response.data);
     } catch (error) {
       console.error(error);
@@ -28,7 +28,7 @@ const UsersComponent = () => {
     try {
       if (selectedUser) {
         await axios.patch(
-          `https://ass12.vercel.appuserall/${selectedUser._id}`,
+          `https://ass12.vercel.app/userall/${selectedUser._id}`,
           {
             role: newRole,
           },
@@ -48,7 +48,7 @@ const UsersComponent = () => {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`https://ass12.vercel.appuserdel/${userId}`);
+      await axios.delete(`https://ass12.vercel.app/userdel/${userId}`);
       console.log("User deleted successfully");
       fetchUsers();
     } catch (error) {

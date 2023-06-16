@@ -1,14 +1,12 @@
-
-#vercel cannot working good for my project ... from chatgpt vercel may be static and stateless server thats why i got those problem ... for local setup i give my .env.local file also express .env  uploaded ..
+#vercel cannot working good for my project ... from chatgpt vercel may be static and stateless server thats why i got those problem ... for local setup i give my .env.local file also express .env uploaded ..
 
 sorry for this problem ....
-
 
 # Assignment 12
 
 Before live link check please check
 
-https://ass12.vercel.appusers/
+https://ass12.vercel.app/users/
 
 # Role came from database So nothing show in dashboard
 

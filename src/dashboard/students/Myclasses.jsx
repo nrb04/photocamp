@@ -6,7 +6,7 @@ import useRole from "../../AuthProvider/role/useRole";
 const fetchUserCourses = async (email) => {
   try {
     const response = await axios.get(
-      `https://ass12.vercel.appmyclasses/${email}`,
+      `https://ass12.vercel.app/myclasses/${email}`,
     );
     return response.data;
   } catch (error) {

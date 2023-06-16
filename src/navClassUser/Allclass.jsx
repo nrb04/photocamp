@@ -3,7 +3,7 @@ import axios from "axios";
 
 const fetchCourses = async () => {
   try {
-    const response = await axios.get("https://ass12.vercel.appcourses");
+    const response = await axios.get("https://ass12.vercel.app/courses");
     return response.data;
   } catch (error) {
     console.error(error);

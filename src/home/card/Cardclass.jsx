@@ -3,7 +3,7 @@ import axios from "axios";
 
 const fetchCourses = async () => {
   try {
-    const response = await axios.get("https://ass12.vercel.appcourses");
+    const response = await axios.get("https://ass12.vercel.app/courses");
     return response.data;
   } catch (error) {
     console.error(error);
@@ -25,7 +25,7 @@ const Cardclass = () => {
 
   return (
     <>
-      <div className="mx-auto max-w-sm space-x-4 rounded-xl bg-white p-6 shadow-lg">
+      <div className="mx-auto md:max-w-sm space-x-4 rounded-xl bg-white p-6 shadow-lg">
         <div>
           <div className="text-2xl text-center font-bold text-black">
             Top Courses

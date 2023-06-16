@@ -14,7 +14,7 @@ const CourseAdd = () => {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get("https://ass12.vercel.appcourses");
+      const response = await axios.get("https://ass12.vercel.app/courses");
       setCourses(response.data);
     } catch (error) {
       console.error(error);
@@ -26,13 +26,13 @@ const CourseAdd = () => {
       if (selectedCourse) {
         // Update existing course
         await axios.put(
-          `https://ass12.vercel.appcourses/${selectedCourse._id}`,
+          `https://ass12.vercel.app/courses/${selectedCourse._id}`,
           data,
         );
         console.log("Course updated successfully");
       } else {
         // Add new course
-        await axios.post("https://ass12.vercel.appcourses", data);
+        await axios.post("https://ass12.vercel.app/courses", data);
         console.log("Course added successfully");
       }
       reset(); // Reset the form after successful submission
@@ -50,7 +50,7 @@ const CourseAdd = () => {
 
   const handleDelete = async (courseId) => {
     try {
-      await axios.delete(`https://ass12.vercel.appcourses/${courseId}`);
+      await axios.delete(`https://ass12.vercel.app/courses/${courseId}`);
       console.log("Course deleted successfully");
       fetchCourses(); // Fetch updated courses
     } catch (error) {
